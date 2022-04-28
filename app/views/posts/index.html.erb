@@ -1,11 +1,12 @@
-
-class Student
-  def initia
-
-  def 【メソッド名】
-    puts "私の名前は「#{@last_name + " " + @first_name}」です。"
-  end
-end
-
-student = Student.new("山田", "太郎")
-student.introduce
+<h1>TOP PAGE</h1>
+  <%= link_to '新規投稿', '/posts/new'%>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class="post-date">
+          <%= post.created_at %>
+        </div>			
+      <div class="post-content">
+        <%= post.content %>
+      </div>
+      </div>
+    <% end %>
